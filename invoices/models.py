@@ -8,8 +8,8 @@ class Invoice(models.Model):
     def __str__(self):
         return f"Invoice {self.id}"
 
-class InvoiceDetail(model.Models):
-    invoice = models.ForeignKey(Invoice,on_delete=models.CASCADE,related_names="details")
+class InvoiceDetail(models.Model):
+    invoice = models.ForeignKey(Invoice,on_delete=models.CASCADE,related_name="details")
     description = models.TextField()
     quantity = models.PositiveIntegerField()
     unit_price = models.DecimalField(max_digits=10,decimal_places=2)
