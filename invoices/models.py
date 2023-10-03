@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Invoice(models.Model):
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True)
     customer_name = models.CharField(max_length=255)
 
     def __str__(self):
